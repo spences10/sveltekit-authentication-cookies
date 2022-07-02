@@ -1,6 +1,6 @@
 # SvelteKit authentication wit cookies
 
-This examples was made from the awesome tutorial from @JoysOfCode
+This examples was made from the awesome tutorial from @mattcroat
 
 Over on the YouTube channel:
 
