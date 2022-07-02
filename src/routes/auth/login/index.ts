@@ -1,6 +1,6 @@
 import { db } from '$lib/database'
 import type { RequestHandler } from '@sveltejs/kit'
-import * as bycrypt from 'bcrypt'
+import * as bycrypt from 'bcryptjs'
 import * as cookie from 'cookie'
 
 export const post: RequestHandler = async ({ request }) => {

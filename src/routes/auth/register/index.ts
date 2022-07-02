@@ -1,6 +1,6 @@
 import { db } from '$lib/database'
 import type { RequestHandler } from '@sveltejs/kit'
-import * as bcrypt from 'bcrypt'
+import * as bcrypt from 'bcryptjs'
 
 export const post: RequestHandler = async ({ request }) => {
   const form = await request.formData()
