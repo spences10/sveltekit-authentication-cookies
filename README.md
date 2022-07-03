@@ -19,3 +19,5 @@ For deploying:
 
 This post from @josefaidt did the trick!!
 https://josef.dev/posts/svelte-kit-planetscale-and-prisma-on-vercel
+
+I detailed the issues I had getting this working on Vercel here: https://scottspence.com/posts/prisma-sveltekit-planetscale-deployment-issues
