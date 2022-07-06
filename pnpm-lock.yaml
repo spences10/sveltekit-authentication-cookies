@@ -7,8 +7,8 @@ specifiers:
   '@sveltejs/kit': next
   '@types/bcrypt': 5.0.0
   '@types/cookie': 0.5.1
-  '@typescript-eslint/eslint-plugin': 5.30.4
-  '@typescript-eslint/parser': 5.30.4
+  '@typescript-eslint/eslint-plugin': 5.30.5
+  '@typescript-eslint/parser': 5.30.5
   bcrypt: 5.0.1
   cookie: 0.5.0
   eslint: 8.19.0
@@ -24,21 +24,20 @@ specifiers:
 
 devDependencies:
   '@playwright/test': 1.23.1
-  '@prisma/client': 4.0.0_prisma@4.0.0
+  '@prisma/client': 4.0.0
   '@sveltejs/adapter-vercel': 1.0.0-next.59
   '@sveltejs/kit': 1.0.0-next.360_svelte@3.48.0
-  '@types/bcryptjs': 2.4.2
+  '@types/bcrypt': 5.0.0
   '@types/cookie': 0.5.1
   '@typescript-eslint/eslint-plugin': 5.30.5_6zdoc3rn4mpiddqwhppni2mnnm
   '@typescript-eslint/parser': 5.30.5_4x5o4skxv6sl53vpwefgt23khm
-  bcryptjs: 2.4.3
+  bcrypt: 5.0.1
   cookie: 0.5.0
   eslint: 8.19.0
   eslint-config-prettier: 8.5.0_eslint@8.19.0
   eslint-plugin-svelte3: 4.0.0_m4jpobot6gi3xtcba7bv5cflma
   prettier: 2.7.1
   prettier-plugin-svelte: 2.7.0_nakrehnrzdf7fdea5k3a4dfy4m
-  prisma: 4.0.0
   svelte: 3.48.0
   svelte-check: 2.8.0_svelte@3.48.0
   svelte-preprocess: 4.10.7_lvfi2wesz6u4l5rfbnetbucfmm
@@ -143,7 +142,7 @@ packages:
       playwright-core: 1.23.1
     dev: true
 
-  /@prisma/client/4.0.0_prisma@4.0.0:
+  /@prisma/client/4.0.0:
     resolution: {integrity: sha512-g1h2OGoRo7anBVQ9Cw3gsbjwPtvf7i0pkGxKeZICtwkvE5CZXW+xZF4FZdmrViYkKaAShbISL0teNpu9ecpf4g==}
     engines: {node: '>=14.17'}
     requiresBuild: true
@@ -154,16 +153,10 @@ packages:
         optional: true
     dependencies:
       '@prisma/engines-version': 3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11
-      prisma: 4.0.0
     dev: true
 
   /@prisma/engines-version/3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11:
     resolution: {integrity: sha512-PiZhdD624SrYEjyLboI0X7OugNbxUzDJx9v/6ldTKuqNDVUCmRH/Z00XwDi/dgM4FlqOSO+YiUsSiSKjxxG8cw==}
-    dev: true
-
-  /@prisma/engines/3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11:
-    resolution: {integrity: sha512-u/rG4lDHALolWBLr3yebZ+N2qImp3SDMcu7bHNJuRDaYvYEXy/MqfNRNEgd9GoPsXL3gofYf0VzJf2AmCG3YVw==}
-    requiresBuild: true
     dev: true
 
   /@rollup/pluginutils/4.2.1:
@@ -223,8 +216,10 @@ packages:
       - supports-color
     dev: true
 
-  /@types/bcryptjs/2.4.2:
-    resolution: {integrity: sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==}
+  /@types/bcrypt/5.0.0:
+    resolution: {integrity: sha512-agtcFKaruL8TmcvqbndlqHPSJgsolhf/qPWchFlgnW1gECTN/nKbFcoFnvKAQRFfKbh+BO6A3SWdJu9t+xF3Lw==}
+    dependencies:
+      '@types/node': 18.0.3
     dev: true
 
   /@types/cookie/0.5.1:
@@ -475,8 +470,16 @@ packages:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
 
-  /bcryptjs/2.4.3:
-    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
+  /bcrypt/5.0.1:
+    resolution: {integrity: sha512-9BTgmrhZM2t1bNuDtrtIMVSmmxZBrJ71n8Wg+YgdjHuIWYF7SjjmCPZFB+/5i/o/PIeRpwVJR3P+NrpIItUjqw==}
+    engines: {node: '>= 10.0.0'}
+    requiresBuild: true
+    dependencies:
+      '@mapbox/node-pre-gyp': 1.0.9
+      node-addon-api: 3.2.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
     dev: true
 
   /binary-extensions/2.2.0:
@@ -1348,6 +1351,10 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /node-addon-api/3.2.1:
+    resolution: {integrity: sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==}
+    dev: true
+
   /node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
     engines: {node: 4.x || >=6.0.0}
@@ -1466,15 +1473,6 @@ packages:
     resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    dev: true
-
-  /prisma/4.0.0:
-    resolution: {integrity: sha512-Dtsar03XpCBkcEb2ooGWO/WcgblDTLzGhPcustbehwlFXuTMliMDRzXsfygsgYwQoZnAUKRd1rhpvBNEUziOVw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-    requiresBuild: true
-    dependencies:
-      '@prisma/engines': 3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11
     dev: true
 
   /punycode/2.1.1:
