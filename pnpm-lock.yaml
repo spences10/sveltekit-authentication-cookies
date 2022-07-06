@@ -4,7 +4,7 @@ specifiers:
   '@playwright/test': 1.23.1
   '@prisma/client': 4.0.0
   '@sveltejs/adapter-vercel': 1.0.0-next.59
-  '@sveltejs/kit': v1.0.0-next.357
+  '@sveltejs/kit': next
   '@types/bcryptjs': 2.4.2
   '@types/cookie': 0.5.1
   '@typescript-eslint/eslint-plugin': 5.30.5
@@ -22,12 +22,13 @@ specifiers:
   svelte-preprocess: 4.10.7
   tslib: 2.4.0
   typescript: 4.7.4
+  vite: 2.9.13
 
 devDependencies:
   '@playwright/test': 1.23.1
   '@prisma/client': 4.0.0_prisma@4.0.0
   '@sveltejs/adapter-vercel': 1.0.0-next.59
-  '@sveltejs/kit': 1.0.0-next.357_svelte@3.48.0
+  '@sveltejs/kit': 1.0.0-next.360_svelte@3.48.0+vite@2.9.13
   '@types/bcryptjs': 2.4.2
   '@types/cookie': 0.5.1
   '@typescript-eslint/eslint-plugin': 5.30.5_6zdoc3rn4mpiddqwhppni2mnnm
@@ -45,6 +46,7 @@ devDependencies:
   svelte-preprocess: 4.10.7_lvfi2wesz6u4l5rfbnetbucfmm
   tslib: 2.4.0
   typescript: 4.7.4
+  vite: 2.9.13
 
 packages:
 
@@ -185,12 +187,13 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.357_svelte@3.48.0:
-    resolution: {integrity: sha512-nCAehVybIEpQNnPu61V/EFVdfDb1nBSiQUfW9EcSSDEUbyAMCVBOKZZuzQ0qQDp3xniqRkyDzpBA4wN+ADxHBw==}
+  /@sveltejs/kit/1.0.0-next.360_svelte@3.48.0+vite@2.9.13:
+    resolution: {integrity: sha512-z1W6oYSmDzYcjlXANkbsb0N0IS/0aDl0huzDGRZWXobis4VmzoqzOyxsczyvxwH6FWxQBXls5wNrtm6drzsr6A==}
     engines: {node: '>=16.7'}
     hasBin: true
     peerDependencies:
       svelte: ^3.44.0
+      vite: ^2.9.10
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.49_svelte@3.48.0+vite@2.9.13
       chokidar: 3.5.3
@@ -199,9 +202,6 @@ packages:
       vite: 2.9.13
     transitivePeerDependencies:
       - diff-match-patch
-      - less
-      - sass
-      - stylus
       - supports-color
     dev: true
 
