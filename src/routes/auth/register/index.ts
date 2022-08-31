@@ -2,7 +2,7 @@ import { db } from '$lib/database'
 import type { RequestHandler } from '@sveltejs/kit'
 import * as bcrypt from 'bcryptjs'
 
-export const post: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request }) => {
   const form = await request.formData()
   const username = form.get('username')
   const password = form.get('password')

@@ -3,7 +3,7 @@ import type { RequestHandler } from '@sveltejs/kit'
 import * as bycrypt from 'bcryptjs'
 import * as cookie from 'cookie'
 
-export const post: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request }) => {
   const form = await request.formData()
   const username = form.get('username')
   const password = form.get('password')

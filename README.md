@@ -2,6 +2,10 @@
 
 This examples was made from the awesome tutorial from @mattcroat
 
+```bash
+npx prisma generate
+```
+
 Over on the YouTube channel:
 
 - [#1 - Setting Up The Prisma Database](https://www.youtube.com/watch?v=T935Ya4W5X0)
