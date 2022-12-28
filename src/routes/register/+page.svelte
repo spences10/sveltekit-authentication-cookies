@@ -44,12 +44,12 @@
 			/>
 		</div>
 		<div class="form-control w-full max-w-md">
-			<label for="confirmPassword">
+			<label for="passwordConfirm">
 				<span class="label-text">Password</span>
 			</label>
 			<input
 				type="password"
-				name="confirmPassword"
+				name="passwordConfirm"
 				placeholder="Confirm password"
 				class="input input-primary"
 			/>
