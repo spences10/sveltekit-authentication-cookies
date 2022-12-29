@@ -4,9 +4,10 @@
 	import type { LayoutData } from './$types'
 
 	export let data: LayoutData
+	let { user } = data
 </script>
 
-<Nav />
+<Nav {user} />
 <main>
 	<slot />
 </main>
