@@ -1,9 +1,4 @@
-<h1>Welcome to SvelteKit</h1>
-<p>
-	Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the
-	documentation
-</p>
-
-<form action="/logout" method="POST">
-	<button type="submit" class="btn btn-primary ">Logout</button>
-</form>
+<div class="flex flex-col items-center prose-xl">
+	<h1>Auth with Pocketbase</h1>
+	<p>This is only viewable by authenticated users.</p>
+</div>
