@@ -14,6 +14,9 @@ export const actions: Actions = {
 			await locals.pb
 				.collection('users')
 				.create({ emailVisibility: true, username, ...body })
+			await locals.pb
+				.collection('users')
+				.requestVerification(body.email.toString())
 		} catch (err) {
 			console.log(`Error: ${err}`)
 			throw error(500, 'Something went wrong')
