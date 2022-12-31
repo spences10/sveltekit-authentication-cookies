@@ -1,4 +1,6 @@
 {
 	"css.validate": false,
-	"cSpell.words": ["daisyui"]
+	"cSpell.words": ["daisyui"],
+	"git.enableSmartCommit": true,
+	"git.postCommitCommand": "sync"
 }
