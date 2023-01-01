@@ -3,14 +3,11 @@
 </script>
 
 <div class="flex flex-col items-center prose-xl">
-	<h2>Login to your account</h2>
-	<p>
-		Or <a href="/register" class="link-primary">register</a> if you don't
-		have an account
-	</p>
+	<h2>Reset password</h2>
+	<p>A link to reset your password will be emailed to you.</p>
 
 	<form
-		action="?/login"
+		action="?/resetPassword"
 		method="POST"
 		class="flex flex-col items-center space-y-2 w-full pt-5"
 	>
@@ -26,30 +23,14 @@
 			/>
 		</div>
 		<div class="form-control w-full max-w-md">
-			<label for="password">
-				<span class="label-text">Password</span>
-			</label>
-			<input
-				type="password"
-				name="password"
-				placeholder="Password"
-				class="input input-primary"
-			/>
-		</div>
-		<div class="w-full max-w-md">
-			<a href="/reset-password" class="link-primary">Forgot password?</a>
-		</div>
-		<div class="form-control w-full max-w-md">
 			<input
 				type="submit"
-				value="Login"
+				value="Request reset link"
 				class="btn btn-primary mt-6"
 			/>
 		</div>
-		{#if form?.notVerified}
-			<div
-				class="alert alert-error shadow-lg w-full max-w-md"
-			>
+		{#if form?.success}
+			<div class="alert alert-success shadow-lg w-full max-w-md">
 				<div>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -61,10 +42,10 @@
 							stroke-linecap="round"
 							stroke-linejoin="round"
 							stroke-width="2"
-							d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+							d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
 						/>
 					</svg>
-					<span>Please verify your email before logging in.</span>
+					<span>Email with password resent link sent!</span>
 				</div>
 			</div>
 		{/if}
