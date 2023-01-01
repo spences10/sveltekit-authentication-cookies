@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { AlertIcon } from '$lib/icons'
+	import type { ActionData } from './$types'
 
-	export let form: HTMLFormElement
+	export let form: ActionData
 </script>
 
 <div class="flex flex-col items-center prose-xl">
