@@ -1,11 +1,11 @@
-import { DATABASE_URL } from '$env/static/private'
+import { PUBLIC_DATABASE_URL } from '$env/static/public'
 import type { Handle } from '@sveltejs/kit'
 import PocketBase from 'pocketbase'
 import type { User } from './lib/types'
 import { serializedNonPOJOs } from './lib/utils'
 
 export const handle: Handle = async ({ event, resolve }) => {
-	event.locals.pb = new PocketBase(DATABASE_URL)
+	event.locals.pb = new PocketBase(PUBLIC_DATABASE_URL)
 	event.locals.pb.authStore.loadFromCookie(
 		event.request.headers.get('cookie') || ''
 	)
