@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Nav from '$lib/components/nav.svelte'
+	import { Nav } from '$lib/components'
 	import '../app.postcss'
 	import type { LayoutData } from './$types'
 
