@@ -13,7 +13,7 @@ export const actions: Actions = {
 		try {
 			await locals.pb
 				.collection('users')
-				.create({ emailVisibility: true, username, ...body })
+				.create({ emailVisibility: false, username, ...body })
 			await locals.pb
 				.collection('users')
 				.requestVerification(body.email.toString())
