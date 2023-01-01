@@ -12,6 +12,7 @@
 		<ul class="menu menu-horizontal px-1 space-x-4">
 			{#if user}
 				<li><a href="/" class="btn-sm btn-primary">Home</a></li>
+				<li><a href="/settings" class="btn-sm btn-primary">Settings</a></li>
 				<form action="/logout" method="POST">
 					<li>
 						<button type="submit" class="btn-sm btn-secondary">
