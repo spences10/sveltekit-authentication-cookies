@@ -1,3 +1,10 @@
+<script lang="ts">
+	import { Input } from '$lib/components'
+	import type { ActionData } from './$types'
+
+	export let form: ActionData
+</script>
+
 <div class="flex flex-col items-center prose-xl">
 	<h2>Register for an account</h2>
 	<p>
@@ -10,51 +17,36 @@
 		method="POST"
 		class="flex flex-col items-center space-y-2 w-full pt-5"
 	>
-		<div class="form-control w-full max-w-md">
-			<label for="Name">
-				<span class="label-text">Name</span>
-			</label>
-			<input
-				type="text"
-				name="name"
-				placeholder="Name"
-				class="input input-primary"
-			/>
-		</div>
-		<div class="form-control w-full max-w-md">
-			<label for="email">
-				<span class="label-text">Email</span>
-			</label>
-			<input
-				type="text"
-				name="email"
-				placeholder="Email"
-				class="input input-primary"
-			/>
-		</div>
-		<div class="form-control w-full max-w-md">
-			<label for="password">
-				<span class="label-text">Password</span>
-			</label>
-			<input
-				type="password"
-				name="password"
-				placeholder="Password"
-				class="input input-primary"
-			/>
-		</div>
-		<div class="form-control w-full max-w-md">
-			<label for="passwordConfirm">
-				<span class="label-text">Password</span>
-			</label>
-			<input
-				type="password"
-				name="passwordConfirm"
-				placeholder="Confirm password"
-				class="input input-primary"
-			/>
-		</div>
-		<div class="form-control w-full max-w-md">
+		<Input
+			id="name"
+			label="Name"
+			placeholder="Name"
+			value={form?.data?.name}
+			errors={form?.errors?.name}
+		/>
+		<Input
+			id="email"
+			type="email"
+			label="Email"
+			placeholder="Email"
+			value={form?.data?.email}
+			errors={form?.errors?.email}
+		/>
+		<Input
+			id="password"
+			type="password"
+			label="Password"
+			placeholder="Password"
+			errors={form?.errors?.password}
+		/>
+		<Input
+			id="passwordConfirm"
+			type="password"
+			label="Confirm password"
+			placeholder="Confirm password"
+			errors={form?.errors?.passwordConfirm}
+		/>
+		<div class="form-control w-full max-w-lg">
 			<input
 				type="submit"
 				value="Register"

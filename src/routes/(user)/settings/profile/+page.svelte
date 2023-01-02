@@ -10,7 +10,9 @@
 	import type { User } from '$lib/types'
 	import { getPocketbaseImageURL } from '$lib/utils'
 	import type { PageData } from '../$types'
+	import type { ActionData } from './$types'
 
+	export let form: ActionData
 	export let data: PageData
 	let { user } = data as User
 	let loading: boolean = false
@@ -94,14 +96,21 @@
 				on:change={handleAvatarChange}
 				disabled={loading}
 			/>
+			{#if form?.errors?.avatar}
+				{#each form?.errors?.avatar as error}
+					<label for="avatar" class="label">
+						<span class="label-text-alt text-error">{error}</span>
+					</label>
+				{/each}
+			{/if}
 		</div>
 		<Input
 			id="name"
 			label="Name"
 			placeholder="Enter your name"
-			value={user?.name}
-			required
+			value={form?.data?.name ?? user?.name}
 			disabled={loading}
+			errors={form?.errors?.name}
 		/>
 		<div class="form-control w-full max-w-lg">
 			<input
