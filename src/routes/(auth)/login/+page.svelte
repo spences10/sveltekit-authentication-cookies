@@ -40,9 +40,9 @@
 			/>
 		</div>
 		<div class="w-full max-w-md">
-			<a href="/reset-password" class="link-primary"
-				>Forgot password?</a
-			>
+			<a href="/reset-password" class="link-primary">
+				Forgot password?
+			</a>
 		</div>
 		<div class="form-control w-full max-w-md">
 			<input
