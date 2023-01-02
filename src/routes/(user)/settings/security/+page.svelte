@@ -1,8 +1,5 @@
 <script lang="ts">
 	import { Input } from '$lib/components'
-	import type { ActionData } from './$types'
-
-	export let form: ActionData
 </script>
 
 <div class="flex flex-col h-full w-full space-y-12">
