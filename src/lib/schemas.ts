@@ -47,3 +47,25 @@ export const registerUserSchema = z
 			})
 		}
 	})
+
+export const updateEmailSchema = z.object({
+	email: z.string({ required_error: `Email is required` }).email({
+		message: `Email is invalid`,
+	}),
+})
+
+export const updateUsernameSchema = z.object({
+	username: z
+		.string({ required_error: `Username is required` })
+		.regex(/^[a-zA-Z0-9]+$/, {
+			message: `Username can only contain letters and numbers`,
+		})
+		.min(3, { message: `Username must be at least 3 characters` })
+		.max(24, {
+			message: `Username must be less than 24 characters or less`,
+		})
+		.regex(/^[a-zA-Z0-9]+$/, {
+			message: `Username can only contain letters and numbers`,
+		})
+		.trim(),
+})

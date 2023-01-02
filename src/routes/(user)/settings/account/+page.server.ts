@@ -1,4 +1,6 @@
-import { error, redirect } from '@sveltejs/kit'
+import { updateEmailSchema, updateUsernameSchema } from '$lib/schemas'
+import { validateData } from '$lib/utils'
+import { error, fail, redirect } from '@sveltejs/kit'
 import type { ClientResponseError } from 'pocketbase'
 import type { Actions, PageServerLoad } from './$types'
 
@@ -10,12 +12,22 @@ export const load: PageServerLoad = ({ locals }) => {
 
 export const actions: Actions = {
 	updateEmail: async ({ request, locals }) => {
-		const data = Object.fromEntries(await request.formData())
+		const { formData, errors } = await validateData(
+			await request.formData(),
+			updateEmailSchema
+		)
+
+		if (errors) {
+			return fail(400, {
+				data: formData,
+				errors: errors.fieldErrors,
+			})
+		}
 
 		try {
 			await locals.pb
 				.collection('users')
-				.requestEmailChange(data?.email.toString())
+				.requestEmailChange(formData?.email.toString())
 		} catch (err) {
 			console.log(`Error: ${err}`)
 			const e = err as ClientResponseError
@@ -34,19 +46,29 @@ export const actions: Actions = {
 		}
 	},
 	updateUsername: async ({ request, locals }) => {
-		const data = Object.fromEntries(await request.formData())
+		const { formData, errors } = await validateData(
+			await request.formData(),
+			updateUsernameSchema
+		)
+
+		if (errors) {
+			return fail(400, {
+				data: formData,
+				errors: errors.fieldErrors,
+			})
+		}
 
 		try {
 			await locals.pb
 				.collection('users')
-				.getFirstListItem(`username = "${data?.username}"`)
+				.getFirstListItem(`username = "${formData?.username}"`)
 		} catch (err) {
 			const e = err as ClientResponseError
 			if (e.status === 404) {
 				try {
 					let { username } = await locals.pb
 						.collection('users')
-						.update(locals.user.id, { username: data?.username })
+						.update(locals.user.id, { username: formData?.username })
 					locals.user.username = username
 					return {
 						success: true,

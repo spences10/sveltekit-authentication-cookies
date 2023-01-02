@@ -82,6 +82,7 @@
 					required={true}
 					value={form?.data?.email ?? ''}
 					disabled={loading}
+					errors={form?.errors?.email}
 				/>
 				<button
 					type="submit"
@@ -120,6 +121,7 @@
 					required={true}
 					value={form?.data?.username ?? ''}
 					disabled={loading}
+					errors={form?.errors?.username}
 				/>
 				<button
 					type="submit"
