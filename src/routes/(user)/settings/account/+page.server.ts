@@ -22,9 +22,15 @@ export const actions: Actions = {
 			throw error(e.status, e.data.message)
 		}
 
+		// user to log in again after email change
+		locals.pb.authStore.clear()
+		locals.user = undefined
+
 		return {
 			success: true,
 			// data,
+			status: 303,
+			headers: { Location: '/' },
 		}
 	},
 	updateUsername: async ({ request, locals }) => {

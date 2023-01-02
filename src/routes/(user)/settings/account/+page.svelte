@@ -7,6 +7,7 @@
 
 	let emailModalOpen: boolean = false
 	let usernameModalOpen: boolean = false
+  
 	$: emailModalOpen = false
 	$: usernameModalOpen = false
 </script>
@@ -30,7 +31,7 @@
 					label="New email"
 					type="email"
 					required={true}
-					value={form?.data?.email?.toString()}
+					value={form?.data?.email ?? ''}
 				/>
 				<button type="submit" class="btn btn-primary w-full">
 					Confirm
@@ -58,7 +59,7 @@
 					label="Change username"
 					type="text"
 					required={true}
-					value={form?.data?.username.toString()}
+					value={form?.data?.username ?? ''}
 				/>
 				<button type="submit" class="btn btn-primary w-full">
 					Confirm
