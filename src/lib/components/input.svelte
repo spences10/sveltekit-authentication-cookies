@@ -14,7 +14,7 @@
 		<span class="label-text">{label}</span>
 	</label>
 	<input
-		class="input input-bordered w-full max-w-lg"
+		class="input input-primary w-full max-w-lg"
 		{type}
 		{id}
 		{placeholder}
