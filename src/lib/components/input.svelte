@@ -6,6 +6,7 @@
 	export let type = 'text'
 	export let disabled = false
 	export let required = false
+	export let errors: string[] = []
 </script>
 
 <div class="form-control w-full max-w-lg mb-2">
@@ -22,4 +23,11 @@
 		name={id}
 		{value}
 	/>
+	{#if errors}
+		{#each errors as error}
+			<label for={id} class="label">
+				<span class="label-text-alt text-error">{error}</span>
+			</label>
+		{/each}
+	{/if}
 </div>
