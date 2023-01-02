@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Input } from '$lib/components'
 	import { ErrorIcon } from '$lib/icons'
 	import type { ActionData } from './$types'
 
@@ -17,34 +18,27 @@
 		method="POST"
 		class="flex flex-col items-center space-y-2 w-full pt-5"
 	>
-		<div class="form-control w-full max-w-md">
-			<label for="email">
-				<span class="label-text">Email</span>
-			</label>
-			<input
-				type="text"
-				name="email"
-				placeholder="Email"
-				class="input input-primary"
-			/>
-		</div>
-		<div class="form-control w-full max-w-md">
-			<label for="password">
-				<span class="label-text">Password</span>
-			</label>
-			<input
-				type="password"
-				name="password"
-				placeholder="Password"
-				class="input input-primary"
-			/>
-		</div>
-		<div class="w-full max-w-md">
+		<Input
+			id="email"
+			type="email"
+			label="Email"
+			placeholder="Email"
+			value={form?.data?.email ?? ''}
+			errors={form?.errors?.email ?? []}
+		/>
+		<Input
+			id="password"
+			type="password"
+			label="Password"
+			placeholder="Password"
+			errors={form?.errors?.password ?? []}
+		/>
+		<div class="w-full max-w-lg">
 			<a href="/reset-password" class="link-primary">
 				Forgot password?
 			</a>
 		</div>
-		<div class="form-control w-full max-w-md">
+		<div class="form-control w-full max-w-lg">
 			<input
 				type="submit"
 				value="Login"
@@ -52,7 +46,7 @@
 			/>
 		</div>
 		{#if form?.notVerified}
-			<div class="alert alert-error shadow-lg w-full max-w-md">
+			<div class="alert alert-error shadow-lg w-full max-w-lg">
 				<div>
 					<ErrorIcon />
 					<span>Please verify your email before logging in.</span>
