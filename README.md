@@ -1,44 +1,38 @@
-# create-svelte
+# SvelteKit authentication wit cookies
 
-Everything you need to build a Svelte project, powered by
-[`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This example was made from the awesome tutorial series from
+@huntabyte.
 
-## Creating a project
+This uses Pocketbase with SvelteKit and DaisyUI
 
-If you're seeing this, you've probably already done this step.
-Congrats!
+The Huntabyte tutorial series here:
+https://www.youtube.com/watch?v=vKqWED-aPMg&list=PLq30BP0TIcqW3sMm404UIEA7osPEkKAyg
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+To get set up with a Pocketbase database I used the guide from here:
+https://scottspence.com/posts/set-up-free-pocketbase-db
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+For the mail service I'm using https://www.sendinblue.com/
 
-## Developing
+If you like using Prisma there's also a really good series from
+@mattcroat.
 
-Once you've created a project and installed dependencies with
-`npm install` (or `pnpm install` or `yarn`), start a development
-server:
+Over on the YouTube channel:
 
-```bash
-npm run dev
+- [#1 - Setting Up The Prisma Database](https://www.youtube.com/watch?v=T935Ya4W5X0)
+- [#2 - User Registration](https://www.youtube.com/watch?v=FdjQ3aIZdus)
+- [#3 - User Login](https://www.youtube.com/watch?v=BZymeyrGjZI)
+- [#4 - Passing User Data To Endpoints Using Hooks](https://www.youtube.com/watch?v=y5FsGQCuDRQ)
+- [#5 - Securing Routes](https://www.youtube.com/watch?v=lgjux1BiyNY)
+- [#6 - User Logout](https://www.youtube.com/watch?v=DV7_HFg4Ssk)
+- [#7 - Conditional Rendering Using Session](https://www.youtube.com/watch?v=7mhMJ1A20v8)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+There's a blog post detailing it too:
+https://joyofcode.xyz/sveltekit-authentication-using-cookies
 
-## Building
+For deploying:
 
-To create a production version of your app:
+This post from @josefaidt did the trick!!
+https://josef.dev/posts/svelte-kit-planetscale-and-prisma-on-vercel
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an
-> [adapter](https://kit.svelte.dev/docs/adapters) for your target
-> environment.
+I detailed the issues I had getting this working on Vercel here:
+https://scottspence.com/posts/prisma-sveltekit-planetscale-deployment-issues
