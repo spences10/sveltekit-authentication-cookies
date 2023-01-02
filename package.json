@@ -25,6 +25,7 @@
 		"eslint": "^8.31.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"object-to-formdata": "^4.4.2",
 		"pocketbase": "^0.9.1",
 		"postcss": "^8.4.20",
 		"postcss-load-config": "^4.0.1",

@@ -12,6 +12,7 @@ specifiers:
   eslint: ^8.31.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
+  object-to-formdata: ^4.4.2
   pocketbase: ^0.9.1
   postcss: ^8.4.20
   postcss-load-config: ^4.0.1
@@ -39,6 +40,7 @@ devDependencies:
   eslint: 8.31.0
   eslint-config-prettier: 8.5.0_eslint@8.31.0
   eslint-plugin-svelte3: 4.0.0_6go7qzsvzihesfwmyvq3tnl5qq
+  object-to-formdata: 4.4.2
   pocketbase: 0.9.1
   postcss: 8.4.20
   postcss-load-config: 4.0.1_postcss@8.4.20
@@ -1767,6 +1769,10 @@ packages:
   /object-hash/3.0.0:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
     engines: {node: '>= 6'}
+    dev: true
+
+  /object-to-formdata/4.4.2:
+    resolution: {integrity: sha512-fu6UDjsqIfFUu/B3GXJ2IFnNAL/YbsC1PPzqDIFXcfkhdYjTD3K4zqhyD/lZ6+KdP9O/64YIPckIOiS5ouXwLA==}
     dev: true
 
   /once/1.4.0:

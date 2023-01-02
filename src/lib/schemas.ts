@@ -69,3 +69,77 @@ export const updateUsernameSchema = z.object({
 		})
 		.trim(),
 })
+
+export const updatePasswordSchema = z
+	.object({
+		oldPassword: z.string({
+			required_error: `Old password is required`,
+		}),
+		password: z
+			.string({ required_error: `Password is required` })
+			.regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, {
+				message: `Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, and one number`,
+			}),
+		passwordConfirm: z
+			.string({ required_error: `Please confirm password` })
+			.regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, {
+				message: `Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, and one number`,
+			}),
+	})
+	.superRefine(({ passwordConfirm, password }, ctx) => {
+		if (passwordConfirm !== password) {
+			ctx.addIssue({
+				code: z.ZodIssueCode.custom,
+				message: 'Password and Confirm Password must match',
+				path: ['password'],
+			})
+			ctx.addIssue({
+				code: z.ZodIssueCode.custom,
+				message: 'Password and Confirm Password must match',
+				path: ['passwordConfirm'],
+			})
+		}
+	})
+
+const imageTypes = [
+	'image/jpeg',
+	'image/jpg',
+	'image/png',
+	'image/webp',
+	'image/svg+xml',
+	'image/gif',
+]
+
+export const updateProfileSchema = z.object({
+	name: z
+		.string({ required_error: `Name is required` })
+		.regex(/^[a-zA-Z ]+$/, {
+			message: `Name can only contain letters and spaces`,
+		})
+		.min(2, { message: `Name must be at least 2 characters` })
+		.max(64, {
+			message: `Name must be less than 64 characters`,
+		})
+		.trim(),
+	avatar: z
+		.instanceof(Blob)
+		.optional()
+		.superRefine((val, ctx) => {
+			if (val) {
+				if (val.size > 5242880) {
+					ctx.addIssue({
+						code: z.ZodIssueCode.custom,
+						message: 'Avatar must be less than 5MB in size',
+					})
+				}
+
+				if (!imageTypes.includes(val.type)) {
+					ctx.addIssue({
+						code: z.ZodIssueCode.custom,
+						message:
+							'Unsupported file type. Supported formats: jpeg, jpg, png, webp, svg, gif',
+					})
+				}
+			}
+		}),
+})
