@@ -13,7 +13,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
   object-to-formdata: ^4.4.2
-  pocketbase: ^0.10.0
+  pocketbase: ^0.11.0
   postcss: ^8.4.20
   postcss-load-config: ^4.0.1
   prettier: ^2.8.1
@@ -42,7 +42,7 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.31.0
   eslint-plugin-svelte3: 4.0.0_6go7qzsvzihesfwmyvq3tnl5qq
   object-to-formdata: 4.4.2
-  pocketbase: 0.10.0
+  pocketbase: 0.11.0
   postcss: 8.4.20
   postcss-load-config: 4.0.1_postcss@8.4.20
   prettier: 2.8.1
@@ -1961,8 +1961,8 @@ packages:
     hasBin: true
     dev: true
 
-  /pocketbase/0.10.0:
-    resolution: {integrity: sha512-OWcPRcOPNiTqek5wkf56mCmkox4w5/h1x+ySBNqzQ0Ux7ztEv3aq3Gr91bwn3VcXN7o48XVbKny7A922hNIbQw==}
+  /pocketbase/0.11.0:
+    resolution: {integrity: sha512-nCH3xZoE4oNSWwvjCGOUkuxrZYwzmzEtgW1QrlrV6yPsc9E4D86NDHqXVtnjX7nOLB91FxsiJkZhhlO725yH7g==}
     dev: true
 
   /postcss-import/14.1.0_postcss@8.4.20:
