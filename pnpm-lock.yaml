@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^4.4.2
     version: 4.4.2
   pocketbase:
-    specifier: ^0.13.0
-    version: 0.13.0
+    specifier: ^0.14.0
+    version: 0.14.0
   postcss:
     specifier: ^8.4.20
     version: 8.4.20
@@ -2011,8 +2011,8 @@ packages:
     hasBin: true
     dev: true
 
-  /pocketbase@0.13.0:
-    resolution: {integrity: sha512-d0YH8/OPzQnyqsrrUpFJcPzY93rFFEl3RA0VJydxOBlO4OWgY20JzNXfDxl24vv/8RZXBzA8esIPbfQY6ZjdLw==}
+  /pocketbase@0.14.0:
+    resolution: {integrity: sha512-4y8kZkGQh4NJkuy/LntUBbFAplz655/5/+XYKetSwj6MYMo3N3zWFno+HxzmL59njsauwGsiNEWggbEETm1+WA==}
     dev: true
 
   /postcss-import@14.1.0(postcss@8.4.20):
