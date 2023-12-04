@@ -48,8 +48,8 @@ devDependencies:
     specifier: ^8.4.20
     version: 8.4.20
   postcss-load-config:
-    specifier: ^4.0.1
-    version: 4.0.1(postcss@8.4.20)
+    specifier: ^5.0.0
+    version: 5.0.2(postcss@8.4.20)
   prettier:
     specifier: ^3.0.0
     version: 3.0.0
@@ -61,13 +61,13 @@ devDependencies:
     version: 4.0.0
   svelte-check:
     specifier: ^3.0.1
-    version: 3.0.1(postcss-load-config@4.0.1)(postcss@8.4.20)(svelte@4.0.0)
+    version: 3.0.1(postcss-load-config@5.0.2)(postcss@8.4.20)(svelte@4.0.0)
   svelte-french-toast:
     specifier: ^1.0.3
     version: 1.0.3(svelte@4.0.0)
   svelte-preprocess:
     specifier: ^5.0.0
-    version: 5.0.0(postcss-load-config@4.0.1)(postcss@8.4.20)(svelte@4.0.0)(typescript@5.0.2)
+    version: 5.0.0(postcss-load-config@5.0.2)(postcss@8.4.20)(svelte@4.0.0)(typescript@5.0.2)
   tailwindcss:
     specifier: ^3.2.4
     version: 3.2.4(postcss@8.4.20)
@@ -1507,7 +1507,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /chownr@2.0.0:
@@ -2067,14 +2067,6 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -2329,6 +2321,11 @@ packages:
   /lilconfig@2.0.6:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
+    dev: true
+
+  /lilconfig@3.0.0:
+    resolution: {integrity: sha512-K2U4W2Ff5ibV7j7ydLr+zLAkIg5JJ4lPn1Ltsdt+Tz/IjQ8buJ55pZAxoP34lqIiwtF9iAvtLv3JGv7CAyAg+g==}
+    engines: {node: '>=14'}
     dev: true
 
   /local-pkg@0.5.0:
@@ -2773,21 +2770,21 @@ packages:
       yaml: 1.10.2
     dev: true
 
-  /postcss-load-config@4.0.1(postcss@8.4.20):
-    resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
-    engines: {node: '>= 14'}
+  /postcss-load-config@5.0.2(postcss@8.4.20):
+    resolution: {integrity: sha512-Q8QR3FYbqOKa0bnC1UQ2bFq9/ulHX5Bi34muzitMr8aDtUelO5xKeJEYC/5smE0jNE9zdB/NBnOwXKexELbRlw==}
+    engines: {node: '>= 18'}
     peerDependencies:
+      jiti: '>=1.21.0'
       postcss: '>=8.0.9'
-      ts-node: '>=9.0.0'
     peerDependenciesMeta:
+      jiti:
+        optional: true
       postcss:
         optional: true
-      ts-node:
-        optional: true
     dependencies:
-      lilconfig: 2.0.6
+      lilconfig: 3.0.0
       postcss: 8.4.20
-      yaml: 2.2.1
+      yaml: 2.3.4
     dev: true
 
   /postcss-nested@6.0.0(postcss@8.4.20):
@@ -2956,7 +2953,7 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /rollup@4.6.1:
@@ -3163,7 +3160,7 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check@3.0.1(postcss-load-config@4.0.1)(postcss@8.4.20)(svelte@4.0.0):
+  /svelte-check@3.0.1(postcss-load-config@5.0.2)(postcss@8.4.20)(svelte@4.0.0):
     resolution: {integrity: sha512-7YpHYWv6V2qhcvVeAlXixUPAlpLCXB1nZEQK0EItB3PtuYmENhKclbc5uKSJTodTwWR1y+4stKGcbH30k6A3Yw==}
     hasBin: true
     peerDependencies:
@@ -3176,7 +3173,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 4.0.0
-      svelte-preprocess: 5.0.0(postcss-load-config@4.0.1)(postcss@8.4.20)(svelte@4.0.0)(typescript@4.9.4)
+      svelte-preprocess: 5.0.0(postcss-load-config@5.0.2)(postcss@8.4.20)(svelte@4.0.0)(typescript@4.9.4)
       typescript: 4.9.4
     transitivePeerDependencies:
       - '@babel/core'
@@ -3207,7 +3204,7 @@ packages:
       svelte: 4.0.0
     dev: true
 
-  /svelte-preprocess@5.0.0(postcss-load-config@4.0.1)(postcss@8.4.20)(svelte@4.0.0)(typescript@4.9.4):
+  /svelte-preprocess@5.0.0(postcss-load-config@5.0.2)(postcss@8.4.20)(svelte@4.0.0)(typescript@4.9.4):
     resolution: {integrity: sha512-q7lpa7i2FBu8Pa+G0MmuQQWETBwCKgsGmuq1Sf6n8q4uaG9ZLcLP0Y+etC6bF4sE6EbLxfiI38zV6RfPe3RSfg==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -3250,14 +3247,14 @@ packages:
       detect-indent: 6.1.0
       magic-string: 0.27.0
       postcss: 8.4.20
-      postcss-load-config: 4.0.1(postcss@8.4.20)
+      postcss-load-config: 5.0.2(postcss@8.4.20)
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 4.0.0
       typescript: 4.9.4
     dev: true
 
-  /svelte-preprocess@5.0.0(postcss-load-config@4.0.1)(postcss@8.4.20)(svelte@4.0.0)(typescript@5.0.2):
+  /svelte-preprocess@5.0.0(postcss-load-config@5.0.2)(postcss@8.4.20)(svelte@4.0.0)(typescript@5.0.2):
     resolution: {integrity: sha512-q7lpa7i2FBu8Pa+G0MmuQQWETBwCKgsGmuq1Sf6n8q4uaG9ZLcLP0Y+etC6bF4sE6EbLxfiI38zV6RfPe3RSfg==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -3300,7 +3297,7 @@ packages:
       detect-indent: 6.1.0
       magic-string: 0.27.0
       postcss: 8.4.20
-      postcss-load-config: 4.0.1(postcss@8.4.20)
+      postcss-load-config: 5.0.2(postcss@8.4.20)
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 4.0.0
@@ -3546,7 +3543,7 @@ packages:
       resolve: 1.22.1
       rollup: 3.9.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /vite@5.0.5:
@@ -3708,8 +3705,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /yaml@2.2.1:
-    resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}
+  /yaml@2.3.4:
+    resolution: {integrity: sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==}
     engines: {node: '>= 14'}
     dev: true
 
